@@ -1,12 +1,12 @@
-import './App.css';
+import './styles/index.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
+import Header from './components/Header/index';
 import Home from './pages/Home';
 import Accomodation from  './pages/Accomodation';
 import About from './pages/About';
 import WrongPage from './pages/WrongPage';
-import Footer from './components/Footer';
-import SmallerPage from './components/SmallerPage';
+import Footer from './components/Footer/index';
+import SmallerPage from './components/SmallerPage/index';
 
 const App = () => {
   return (

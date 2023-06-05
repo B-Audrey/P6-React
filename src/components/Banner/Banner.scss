@@ -1,15 +1,15 @@
-@import '../styles/styles.scss';
+@import '../../styles/styles.scss';
 
 .banner{
     width: 100%;
     @include flex-height-center;
     flex-direction: column;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
     &__image {
+        @include radius;
         object-fit: cover;
         max-height: 111px ;
         width: 100%;
-        border-radius: 25px;
         filter: brightness(80%) ;
     }
     &__text{
