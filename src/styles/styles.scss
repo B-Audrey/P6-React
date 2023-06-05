@@ -1,0 +1,20 @@
+$main-color:#FF6060;
+$text-color:#FFFFFF;
+$block-backgroud-color:#F7F7F7;
+
+@mixin flex-height-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin center {
+    margin: auto;
+    justify-content: center;
+    width: 100%;
+}
+
+a {
+    color: $main-color;
+}
+
+

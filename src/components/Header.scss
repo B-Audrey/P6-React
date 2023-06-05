@@ -1,0 +1,35 @@
+@import '../styles/styles.scss';
+
+.header {
+    @include flex-height-center;
+    justify-content : space-between;
+    margin-top: 20px;
+    &__logoKasa{
+        width: 40%;
+        max-width: 210px;
+        height: auto 
+    }
+    &__nav{
+        @include flex-height-center;
+        width: 40%;    
+        @media (min-width: 700px) {
+            width: 30%;
+        }
+        @media (min-width: 1000px) {
+            width: 20%;
+        }
+        & *{
+            margin: auto;
+            text-decoration: none;
+            @media (min-width: 700px) {
+                text-transform: uppercase;
+            }
+        }
+        & *:visited{
+            color: $main-color;
+        }
+        & *:hover{
+            text-decoration: underline;
+        }
+    }
+}

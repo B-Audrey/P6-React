@@ -1,0 +1,20 @@
+@import '../styles/styles.scss';
+
+.footer{
+    @include flex-height-center;
+    @include center;
+    height: 209px;
+    flex-direction: column;
+    background-color: black;
+    color: $text-color;
+    width: calc(100vw);
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    &__logoKasaWhite{
+        max-width: 145px;
+    }
+    &__text{
+        max-width: 30%;
+    }
+}
