@@ -1,17 +1,15 @@
-import './Items.scss';
-import data from '../../data.json';
+import './Gallery.scss';
 import { Link } from 'react-router-dom';
+import data from '../../data.json';
 
-
-const Items = () => {
-    console.log(data)
+const Gallery = () => {
     return (
         <div className='tagSection'>
             {data.map((current, index) => (
                 <div key={`${index}-${current.id}`} className='tagSection__item'>
                     <Link to={`/accomodation/${current.id}`}>
-                    <img src={`${current.cover}`} alt='cover' className='tagSection__img'></img>
-                    <h4 className='tagSection__title'>{current.title}</h4>
+                    <img src={current.cover} alt='cover' className='tagSection__img'></img>
+                    <p className='tagSection__title'>{current.title}</p>
                     </Link>
                     </div>
             ))}
@@ -19,4 +17,4 @@ const Items = () => {
     )
 }
 
-export default Items;
+export default Gallery;

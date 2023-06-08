@@ -11,7 +11,7 @@
     row-gap: 20px;
     @media (min-width: 700px) {
         grid-template-columns: 1fr 1fr 1fr;
-        background-color: $block-backgroud-color;
+        background-color: $block-background-color;
         padding: 3%;
         column-gap: 3%;
     }

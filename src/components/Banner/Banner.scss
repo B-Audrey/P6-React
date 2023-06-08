@@ -4,7 +4,7 @@
     width: 100%;
     @include flex-height-center;
     flex-direction: column;
-    margin-bottom: 3%;
+    margin: 3% 0% 3% 0%;
     &__image {
         @include radius;
         object-fit: cover;

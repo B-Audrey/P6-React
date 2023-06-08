@@ -1,3 +1,4 @@
+import '../styles/Accomodation.scss'
 import { useParams } from 'react-router-dom'
 
 const Accomodation = () => {
