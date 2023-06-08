@@ -1,0 +1,15 @@
+@import '../../styles/styles.scss';
+
+.tag{
+    @include flex-height-center;
+    justify-content: center;
+    min-width: 84px;
+    background-color: $main-color;
+    color: $text-color;
+    font-size: 0.6em;
+    border-radius: 5px;
+    height: 18px;
+    &__text{
+        text-align: center;
+    }
+}

@@ -2,7 +2,7 @@ import './Collapse.scss';
 import { useState } from 'react';
 import chevron from '../../assets/chevron.png';
 
-const Collapse = (props) => {
+const Collapse = ({title, textContent}) => {
     let [isOpen, setIsOpen] = useState(false)
     const handleClick = () => {
         console.log('je clique');
@@ -17,13 +17,13 @@ const Collapse = (props) => {
     return (
         <div className='collapse'>
             <div className='collapse__banner'>
-                <p className='collapse__title'>{props.title}</p>
+                <p className='collapse__title'>{title}</p>
                 <button onClick={handleClick} className='collapse__chevron'>
                     <img src={chevron} alt='click here top open or close'></img>
                 </button>
             </div>
             {isOpen && (<div className='collapse__content'>
-                <p>{props.textContent}</p>
+                <p>{textContent}</p>
             </div>)}
 
         </div>

@@ -1,0 +1,11 @@
+@import './styles.scss';
+
+.title, .location {
+    color: $main-color;
+}
+
+.tags{
+    @include flex-height-center;
+    column-gap: 2%;
+    padding: 0%;
+}

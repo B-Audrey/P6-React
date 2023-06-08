@@ -1,17 +1,17 @@
 import './Banner.scss'
 
-const Banner = (props) => {
+const Banner = ({text, img}) => {
     return(
         <div className='banner'>
             <div className='banner__text'>
-                {props.text &&
+                {text &&
                 <>
                 <p>Chez vous,&nbsp;</p>
                 <p>partout et ailleurs</p>
                 </>
                 }
             </div>
-            <img src={props.img} alt="Landscape and Sea" className='banner__image'/>
+            <img src={img} alt="Landscape and Sea" className='banner__image'/>
         </div>
     )
 }
