@@ -1,0 +1,12 @@
+@import '../../styles/styles.scss';
+
+.mark{
+    @include flex-height-center;
+    & *{
+        height: 13px;
+        @media (min-width: 1000px) {
+        height: 24px;
+    }
+    }
+    
+}

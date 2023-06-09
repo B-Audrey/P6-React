@@ -5,6 +5,7 @@ import data from '../data.json';
 import Collapse from '../components/Collapse';
 import Mark from '../components/Mark/Mark';
 import Host from '../components/Host/Host';
+import Carousel from '../components/Carousel/Carousel';
 
 console.log(data)
 
@@ -16,6 +17,7 @@ const Accomodation = () => {
   
   return (
     <>
+    <Carousel pictures={currentAccomodation.pictures}/>
     <h1 className='title'>{currentAccomodation.title}</h1>
     <h2 className='location'>{currentAccomodation.location}</h2>
     <ul className='tags'>
@@ -23,12 +25,13 @@ const Accomodation = () => {
         <Tag key={`${index}-${current}`} tagText={current}/>
       )}
     </ul>
+    <Mark rating={currentAccomodation.rating} />
+    <Host name={currentAccomodation.host.name} pictureUrl={currentAccomodation.host.picture}/>
     <div className='informations'>
         <Collapse title='Description' textContent={currentAccomodation.description}/>
         <Collapse title='Équipements' textContent={currentAccomodation.equipments.map((current) => <span>{current}</span>)}/>
     </div>
-    <Mark rating={2} />
-    <Host name={currentAccomodation.host.name} pictureUrl={currentAccomodation.host.picture}/>
+    
     </>
   )
 }
