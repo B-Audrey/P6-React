@@ -1,8 +1,7 @@
 import './Gallery.scss';
 import { Link } from 'react-router-dom';
-import data from '../../data.json';
 
-const Gallery = () => {
+const Gallery = ({data}) => {
     return (
         <div className='tagSection'>
             {data.map((current, index) => (
@@ -11,7 +10,7 @@ const Gallery = () => {
                     <img src={current.cover} alt='cover' className='tagSection__img'></img>
                     <p className='tagSection__title'>{current.title}</p>
                     </Link>
-                    </div>
+                </div>
             ))}
         </div>
     )
