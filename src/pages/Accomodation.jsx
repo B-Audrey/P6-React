@@ -45,7 +45,7 @@ const Accomodation = () => {
   
   return currentElement ? (
     <>
-     (<Carousel pictures={currentElement.pictures}/>
+     <Carousel pictures={currentElement.pictures}/>
      <h1 className='title'>{currentElement.title}</h1>
      <h2 className='location'>{currentElement.location}</h2>
     <ul className='tags'>
@@ -58,7 +58,7 @@ const Accomodation = () => {
     <div className='informations'>
         <Collapse title='Description' textContent={currentElement.description}/>
         <Collapse title='Équipements' textContent={currentElement.equipments.map((current) => <span>{current}</span>)}/>
-    </div>)
+    </div>
     </> 
   ) : (<div>la page arrive</div>)
 }
