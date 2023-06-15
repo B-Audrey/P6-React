@@ -6,9 +6,11 @@ const Gallery = ({data}) => {
         <div className='tagSection'>
             {data.map((current, index) => (
                 <div key={`${index}-${current.id}`} className='tagSection__item'>
-                    <Link to={`/accomodation/${current.id}`}>
+                    <Link to={`/accomodation/${current.id}`} className='tagSection__link'>
                     <img src={current.cover} alt='cover' className='tagSection__img'></img>
-                    <p className='tagSection__title'>{current.title}</p>
+                    <div className='tagSection__title'>
+                        <p className='tagSection__text'>{current.title}</p>
+                    </div>
                     </Link>
                 </div>
             ))}

@@ -1,6 +1,7 @@
 @import '../../styles/styles.scss';
 
 .smallerPage{
+    margin: 0px;
     display: none;
     position: fixed;
     top: 0px;
@@ -10,14 +11,15 @@
     background-color: $block-background-color;
     color: $main-color;
     box-sizing: border-box;
-    padding: 10%;
+    padding: 0% 10%;
     font-size: 1.2em;
-    @media (max-width:325px){
+    align-items: center;
+    text-align: center;
+    @media(max-width:325px){
         display: flex;
         z-index: 100;
-        align-items: center;
-        text-align: center;
-        
-
+        & ~ *{
+            display: none;
+        }
     }
 }

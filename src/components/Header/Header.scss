@@ -11,18 +11,21 @@
     }
     &__nav{
         @include flex-height-center;
-        width: 40%;    
+        width: 50%;    
         @media (min-width: 700px) {
-            width: 30%;
+            width: 35%;
+            font-size: 1.2em;
         }
         @media (min-width: 1000px) {
-            width: 20%;
+            width: 25%;
+            font-size: 1.4em;
         }
         & *{
+            text-transform: uppercase;
             margin: auto;
             text-decoration: none;
             @media (min-width: 700px) {
-                text-transform: uppercase;
+                text-transform: none;
             }
         }
         & *:visited{
