@@ -45,22 +45,29 @@ const Accomodation = () => {
   
   return currentElement ? (
     <>
-     <Carousel pictures={currentElement.pictures}/>
-     <h1 className='title'>{currentElement.title}</h1>
-     <h2 className='location'>{currentElement.location}</h2>
-    <ul className='tags'>
-      {currentElement.tags.map( (current, index) =>
-        <Tag key={`${index}-${current}`} tagText={current}/>
-      )}
-    </ul>
-    <Mark rating={currentElement.rating} />
-    <Host name={currentElement.host.name} pictureUrl={currentElement.host.picture}/>
+    <Carousel pictures={currentElement.pictures}/>
+    <div className='accomodation__presentation'>
+      <div className='accomodation__titleBlock'>
+        <h1 className='title'>{currentElement.title}</h1>
+        <h2 className='location'>{currentElement.location}</h2>
+        <ul className='tags'>
+          {currentElement.tags.map( (current, index) =>
+          <Tag key={`${index}-${current}`} tagText={current}/>
+          )}
+        </ul>
+      </div>
+      <div className='accomodation__hostBlock'>
+        <Mark rating={currentElement.rating} />
+        <Host name={currentElement.host.name} pictureUrl={currentElement.host.picture}/>
+      </div>
+    </div>
     <div className='informations'>
         <Collapse title='Description' textContent={currentElement.description}/>
         <Collapse title='Équipements' textContent={currentElement.equipments.map((current) => <span>{current}</span>)}/>
     </div>
     </> 
-  ) : (<div>la page arrive</div>)
+  ) : (
+  <div>le logement demandé n'est pas disponible à l'affichage actuellement</div>)
 }
 
 export default Accomodation

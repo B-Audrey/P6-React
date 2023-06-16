@@ -6,7 +6,6 @@ const Tag = ({tagText}) => {
             <p className="tag__text">{tagText}</p>
         </li>
     )
-
 }
 
 export default Tag
