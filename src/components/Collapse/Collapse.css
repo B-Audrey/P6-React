@@ -1,4 +1,4 @@
-a {
+.a {
   color: #FF6060;
   text-decoration: none;
 }
@@ -15,15 +15,18 @@ a {
   justify-content: space-between;
   background-color: #FF6060;
 }
+
 @media (min-width: 700px) {
   .collapse__banner {
     height: 52px;
   }
 }
+
 .collapse__chevron {
   border: none;
   background-color: #FF6060;
 }
+
 .collapse__content {
   box-sizing: border-box;
   width: 100%;
@@ -31,4 +34,12 @@ a {
   background-color: #F7F7F7;
   color: #FF6060;
   border-radius: 10px;
-}/*# sourceMappingURL=Collapse.css.map */
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s ease;
+}
+
+.collapse__content--open {
+  height: auto;
+  transition: height 0.3s ease;
+}

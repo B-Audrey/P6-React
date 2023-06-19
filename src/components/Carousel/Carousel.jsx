@@ -7,17 +7,14 @@ import leftArrow from '../../assets/leftArrow.png'
 const Carousel = ({pictures}) => {
     let [actualPictureIndex, setActualPictureIndex] = useState(0);
     let [actualNumber, setActualNumber] = useState(1);
-    const hasSinglepicture = pictures.length === 1 ? true : false;
+    const hasSinglepicture = pictures.length === 1;
 
     const handlePreviousClick = () => {
-        if (actualPictureIndex >= 1) {
-            actualPictureIndex --;
-        }
-        else if (actualPictureIndex === 0) {
-            actualPictureIndex = pictures.length-1;
-        }
-        setActualPictureIndex(actualPictureIndex);
-        setActualNumber(actualPictureIndex+1);
+        setActualPictureIndex((prev) => {
+            let updatedIndex = prev >= 1 ? prev-1 : pictures.length-1; 
+            setActualNumber(updatedIndex+1);
+            return updatedIndex;
+        })
     }
 
     const handleNextClick = () => {
@@ -32,7 +29,7 @@ const Carousel = ({pictures}) => {
     }
     return (
         <div className='carousel'>
-            <img key={actualPictureIndex} src={pictures[actualPictureIndex]} alt='accomodation room' className='carousel__picture'></img>
+            <img src={pictures[actualPictureIndex]} alt='accomodation room' className='carousel__picture'></img>
             {hasSinglepicture ? (null
             ) : (
             <div className='carousel__navigation'>

@@ -26,7 +26,7 @@ const Accomodation = () => {
         setHaveCorrectId(true)
       }
       catch(error){
-        console.log(error)
+        navigate('/error')
       }
     }
   fetchData()

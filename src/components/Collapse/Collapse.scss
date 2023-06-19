@@ -15,16 +15,39 @@
             height: 52px;
         }
     }
-    &__chevron{
-        border: none;
-        background-color: $main-color;
-    }
     &__content{
         box-sizing: border-box;
         width: 100%;
         padding: 1% 3%;
         background-color: $block-background-color;
         color: $main-color;
-        border-radius: 10px;
+        border-radius: 0px 0px 10px 10px;
+        position: relative;
+        top: -20px;
+        transition: transform 3000ms;
+        transform-origin: 50% 0%;
+        z-index: -1;
+    }
+    &__content p {
+        padding-top: 20px;
+    }
+    &__content--open{
+        padding-top: 20px;
+        transform: scaleY(1);
+    }
+    &__content--close{
+        transform: scaleY(0);
+    }
+    &__chevron {
+        transition: transform 300ms ease-in;
+        transform: rotate(0deg);
+        border: none;
+        background-color: $main-color;
+    }
+    &__chevron--open {
+        transition: transform 300ms ease-in;
+        transform: rotate(-180deg);
+        border: none;
+        background-color: $main-color;
     }
 }
