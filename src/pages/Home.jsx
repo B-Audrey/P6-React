@@ -2,8 +2,6 @@ import Banner from '../components/Banner';
 import img from '../assets/bannerImg.png';
 import Gallery from '../components/Gallery/index';
 import { useState, useEffect } from 'react';
-import Carousel from '../components/Carousel/Carousel';
-
 
 const Home = () => {
 
@@ -19,6 +17,7 @@ const Home = () => {
         setHaveData(data=true)
       }
       catch(error){
+        console.error(error)
       }
     }
   fetchData()

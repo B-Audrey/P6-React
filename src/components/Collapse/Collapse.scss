@@ -1,6 +1,8 @@
 @import '../../styles/styles.scss';
 
 .collapse {
+    transition: transform 5000ms;
+    transform-origin: 50% 0%;
     &__banner{
         @include flex-height-center;
         margin-top:5% ;
@@ -24,29 +26,31 @@
         border-radius: 0px 0px 10px 10px;
         position: relative;
         top: -20px;
-        transition: transform 3000ms;
+        transition: transform 2000ms, height 3000ms;
         transform-origin: 50% 0%;
         z-index: -1;
-    }
-    &__content p {
-        padding-top: 20px;
-    }
-    &__content--open{
-        padding-top: 20px;
+        padding-top: 15px;
         transform: scaleY(1);
     }
-    &__content--close{
+    &__content--open{
+        transform: scaleY(0);
+        height: 0;
+    }
+    &__content--text{
+        transform: scaleY(1);
+    }
+    &__content--text--open{
         transform: scaleY(0);
     }
     &__chevron {
         transition: transform 300ms ease-in;
-        transform: rotate(0deg);
+        transform: rotate(-180deg);
         border: none;
         background-color: $main-color;
     }
     &__chevron--open {
         transition: transform 300ms ease-in;
-        transform: rotate(-180deg);
+        transform: rotate(0deg);
         border: none;
         background-color: $main-color;
     }
