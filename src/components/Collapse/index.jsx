@@ -15,8 +15,8 @@ const Collapse = ({title, textContent}) => {
                     <img src={chevron} alt='click here top open or close'></img>
                 </button>
             </div>
-            <div className={`collapse__content${isOpen? '--open' : ''}`}>
-                <p className={`collapse__content--text${isOpen? '--open' : ''}`}>{textContent}</p>
+            <div className={`collapse__content collapse__content${isOpen? '--open' : '--close'}`}>
+                <p className={`collapse__content--text collapse__content--text${isOpen? '--open' : '--close'}`}>{textContent}</p>
             </div>
         </div>
     )

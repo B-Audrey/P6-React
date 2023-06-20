@@ -1,8 +1,6 @@
 @import '../../styles/styles.scss';
 
 .collapse {
-    transition: transform 5000ms;
-    transform-origin: 50% 0%;
     &__banner{
         @include flex-height-center;
         margin-top:5% ;
@@ -20,37 +18,52 @@
     &__content{
         box-sizing: border-box;
         width: 100%;
-        padding: 1% 3%;
         background-color: $block-background-color;
         color: $main-color;
         border-radius: 0px 0px 10px 10px;
+        padding-top: 15px;
         position: relative;
         top: -20px;
-        transition: transform 2000ms, height 3000ms;
-        transform-origin: 50% 0%;
         z-index: -1;
-        padding-top: 15px;
-        transform: scaleY(1);
     }
     &__content--open{
-        transform: scaleY(0);
-        height: 0;
+        max-height: 500px;
+        transition: max-height 500ms;
+        transform-origin: top;
+        overflow: hidden;
+    }
+    &__content--close{
+        transform-origin: top;
+        max-height: 0px;
+        transition: max-height 500ms;
+        overflow: hidden;
     }
     &__content--text{
-        transform: scaleY(1);
+        display: block;
+        margin: auto;
+        width: 95%;
+        padding: 3% 0%;
     }
     &__content--text--open{
-        transform: scaleY(0);
+        transform: translateY(0%);
+        transform-origin: top;
+        transition: transform 500ms;
+    }
+    &__content--text--close{
+        transform: translateY(-100%);    
+        transform-origin: top;
+        transition: transform 500ms ;
+        overflow: hidden;
     }
     &__chevron {
         transition: transform 300ms ease-in;
-        transform: rotate(-180deg);
+        transform: rotate(0deg);
         border: none;
         background-color: $main-color;
     }
     &__chevron--open {
         transition: transform 300ms ease-in;
-        transform: rotate(0deg);
+        transform: rotate(-180deg);
         border: none;
         background-color: $main-color;
     }
