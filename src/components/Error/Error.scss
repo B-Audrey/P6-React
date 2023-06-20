@@ -11,7 +11,7 @@
     margin-top:5%;
     &__code{
         margin: auto;
-        font-size: 6em;
+        font-size: 4em;
         font-weight: 700;
         @media (min-width: 700px){
             font-size: 8em;
@@ -21,12 +21,20 @@
         }
     }
     &__text{
-        font-size: 1.5em;
+        font-size: 0.8em;
+        width: 80%;
         text-align: center;
+        @media (min-width: 700px){
+            font-size: 1.2em;
+            width: 100%;
+        }
     }
     &__link{
-        font-size: 1em;
+        font-size: 0.7em;
         text-decoration: underline;
+        @media (min-width: 700px){
+            font-size: 0.9em;
+        }
     }
 
 }

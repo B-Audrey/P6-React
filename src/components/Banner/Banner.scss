@@ -13,7 +13,10 @@
         object-fit: cover;
         max-height: 111px ;
         width: 100%;
-        filter: brightness(80%) ;
+        filter: brightness(80%);
+        @media (min-width: 700px) {
+           max-height: 223px;
+        }
     }
     &__text{
         position: relative;
@@ -28,6 +31,7 @@
         @media (min-width: 700px) {
             flex-direction: row;
             align-items: center;
+            top: 112px;
         }
     }
     &__text p{

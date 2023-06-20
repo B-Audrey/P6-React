@@ -62,7 +62,7 @@ const Accomodation = () => {
       </div>
     </div>
     <div className='informations'>
-        <Collapse title='Description' textContent={currentElement.description}/>
+        <Collapse className='information__collapse' title='Description' textContent={currentElement.description}/>
         <Collapse title='Équipements' textContent={currentElement.equipments.map((current) => <span>{current}</span>)}/>
     </div>
     </> 

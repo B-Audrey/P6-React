@@ -3,7 +3,7 @@
 .collapse {
     &__banner{
         @include flex-height-center;
-        margin-top:5% ;
+        margin-top:2% ;
         border-radius: 10px;
         box-sizing: border-box;
         color: $text-color;
@@ -13,6 +13,14 @@
         background-color: $main-color;
         @media(min-width:700px){
             height: 52px;
+        }
+    }
+    &__title{
+        margin: 2%;
+        font-size: 0.8em;
+        @media(min-width:700px){
+            font-size: 1.2em;
+            font-weight: 500;
         }
     }
     &__content{
@@ -39,10 +47,16 @@
         overflow: hidden;
     }
     &__content--text{
-        display: block;
+        font-size: 0.8em;
         margin: auto;
         width: 95%;
         padding: 3% 0%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        @media(min-width:700px){
+            font-size: 1em;
+        }
     }
     &__content--text--open{
         transform: translateY(0%);
@@ -54,6 +68,12 @@
         transform-origin: top;
         transition: transform 500ms ;
         overflow: hidden;
+    }
+    &__img{
+        width: 16px;
+        @media(min-width:700px){
+            width: 24px;
+        }
     }
     &__chevron {
         transition: transform 300ms ease-in;
