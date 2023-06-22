@@ -2,26 +2,26 @@ import Banner from '../components/Banner';
 import img from '../assets/bannerImg.png';
 import Gallery from '../components/Gallery/index';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import apiLink from '../service/apiClass';
 
 const Home = () => {
-
+  const navigate = useNavigate();
   let [data, setData] = useState({});
   let [haveData, setHaveData] = useState(false);
 
-  useEffect(()=>{
-    const fetchData = async () => {
-      try{
-        let response = await fetch('./data.json');
-        let dataToDisplay = await response.json();
-        setData(dataToDisplay);
-        setHaveData(data=true)
-      }
-      catch(error){
-        console.error(error)
-      }
+  const fetchData = async () => {
+    try{
+      const dataToDisplay = await apiLink.init();
+      setData(dataToDisplay);
+      setHaveData(true);
     }
-  fetchData()
-  }, [])
+    catch(error){
+      navigate('/error');
+    }
+  }
+
+  useEffect(()=>{  fetchData()  }, []);
 
   console.log(data)
 

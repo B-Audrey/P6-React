@@ -7,6 +7,7 @@ import Collapse from '../components/Collapse';
 import Mark from '../components/Mark/Mark';
 import Host from '../components/Host/Host';
 import Carousel from '../components/Carousel/Carousel';
+import apiLink from '../service/apiClass';
 
 
 const Accomodation = () => {  
@@ -16,23 +17,20 @@ const Accomodation = () => {
   const { refNumber } = useParams();
   const navigate = useNavigate();
   
-  useEffect(()=>{
-    const fetchData = async () => {
-      try{
-        let response = await fetch('../data.json');
-        let dataToDisplay = await response.json();
-        setCurrentElement(dataToDisplay.find( (element) => element.id === refNumber))
-        console.log(currentElement)
-        setHaveCorrectId(true)
-      }
-      catch(error){
-        navigate('/error')
-      }
+  const fetchData = async () => {
+    try{
+      const dataToDisplay = await apiLink.init();
+      setCurrentElement(apiLink.getAccById(dataToDisplay, refNumber));
+      setHaveCorrectId(true);
     }
-  fetchData()
-  }, [])
-  
-  console.log(currentElement)
+    catch(error){
+      navigate('/error');
+    }
+  }
+
+  useEffect(()=>{
+    fetchData()
+    }, []);
   
   useEffect( () => {
     if(currentElement === undefined){
@@ -41,9 +39,7 @@ const Accomodation = () => {
   }, [haveCorrectId])
   
   
-  console.log(currentElement)
-  
-  return currentElement ? (
+  return currentElement && (
     <>
     <Carousel pictures={currentElement.pictures}/>
     <div className='accomodation__presentation'>
@@ -63,11 +59,10 @@ const Accomodation = () => {
     </div>
     <div className='informations'>
         <Collapse className='information__collapse' title='Description' textContent={currentElement.description}/>
-        <Collapse title='Équipements' textContent={currentElement.equipments.map((current) => <span>{current}</span>)}/>
+        <Collapse title='Équipements' textContent={currentElement.equipments.map((current, index) => <span key={`${index}-${current}`}>{current}</span>)}/>
     </div>
     </> 
-  ) : (
-  <div>le logement demandé n'est pas disponible à l'affichage actuellement</div>)
+  )
 }
 
-export default Accomodation
+export default Accomodation;
