@@ -1,5 +1,5 @@
 import logoKasaWhite from '../../assets/logoKasaWhite.png';
-import './Footer.scss'
+import './Footer.scss';
 
 const Footer = () => {
    return (

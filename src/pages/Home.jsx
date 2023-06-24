@@ -21,9 +21,10 @@ const Home = () => {
     }
   }
 
-  useEffect(()=>{  fetchData()  }, []);
+  useEffect(()=>{
+    fetchData();
+    }, []);
 
-  console.log(data)
 
     return (
       <>

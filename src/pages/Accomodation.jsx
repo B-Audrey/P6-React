@@ -12,8 +12,8 @@ import apiLink from '../service/apiClass';
 
 const Accomodation = () => {  
 
-  let [currentElement, setCurrentElement] = useState(null)
-  let [haveCorrectId, setHaveCorrectId] = useState(null)
+  let [currentElement, setCurrentElement] = useState(null);
+  let [haveCorrectId, setHaveCorrectId] = useState(null);
   const { refNumber } = useParams();
   const navigate = useNavigate();
   
@@ -29,12 +29,12 @@ const Accomodation = () => {
   }
 
   useEffect(()=>{
-    fetchData()
-    }, []);
+    fetchData();
+  }, []);
   
   useEffect( () => {
     if(currentElement === undefined){
-      navigate('/error')
+      navigate('/error');
     }
   }, [haveCorrectId])
   

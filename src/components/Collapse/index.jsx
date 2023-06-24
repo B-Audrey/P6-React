@@ -3,7 +3,7 @@ import { useState } from 'react';
 import chevron from '../../assets/chevron.png';
 
 const Collapse = ({title, textContent}) => {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
     
     const handleClick = () => setIsOpen((previousValue) => !previousValue );
 
