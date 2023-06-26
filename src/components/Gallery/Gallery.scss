@@ -21,6 +21,9 @@
     &__item{
         height: 225px;
         @include radius;
+        @media (min-width: 700px){
+            height: 340px;
+        }
     }
     &__img{
         width: 100%;
@@ -37,6 +40,7 @@
         color: $text-color;
         @media (min-width: 700px) {
             width: 90%;
+            bottom: 110px;
         }
     }
     &__text {
